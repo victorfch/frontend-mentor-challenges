@@ -5,7 +5,8 @@ module.exports = {
 		extend: {
 			colors: {
 				'light-gray-blue': 'hsl(223, 64%, 98%);',
-				'primary': 'hsl(26, 100%, 55%);'
+				'primary': 'hsl(26, 100%, 55%);',
+				'secondary': 'hsl(25, 100%, 94%);'
 			},
 			borderColor: {
 				'hsl-primary': 'hsl(26, 100%, 55%)',
