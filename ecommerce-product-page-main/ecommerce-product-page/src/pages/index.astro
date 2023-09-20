@@ -7,11 +7,12 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="E-commerce pdp">
 	<Header client:idle />
 	<main>
-		<div class="container grid mt-4">
+
+		<div class="max-w-5xl mx-auto grid grid-cols-autofit gap-16 mt-16">
 			<Carousel />
 			
-			<div class="panel-right">
-				<div class="d-flex flex-column gap-2">
+			<div class="flex justify-center items-center">
+				<div class="flex flex-col gap-8">
 					<div>Sneaker Company</div>
 					<h1>Fall Limited Edition Sneakers</h1>
 					<p class="description">
@@ -24,21 +25,27 @@ import Layout from '../layouts/Layout.astro';
 						$250.00
 					</div>
 
-					<div class="btn-list d-flex flex-row">
-						<div class="input">
-							<button class="bg-gray border-none">
+					<div class="flex flex-row gap-4 h-8">
+						<div class="flex justify-evenly items-center bg-light-gray-blue rounded-lg p-6">
+							<button>
 								<svg height="4" width="12">
 									<use xlink:href="/svg/icon-minus.svg#icon-minus"></use>
 								</svg>
 							</button>
-							<input type="text" value="0" class="text-center bg-gray border-none">
-							<button class="bg-gray border-none">
+							<input type="text" value="0" class="text-center bg-light-gray-blue outline-none">
+							<button>
 								<svg height="12" width="12">
 									<use xlink:href="/svg/icon-plus.svg#icon-plus"></use>
 								</svg>
 							</button>
 						</div>
-						<button class="btn">
+
+						<button class="btn w-full bg-primary border-none rounded-lg p-5 flex justify-center items-center gap-3 text-white">
+							<span>
+								<svg height="20" width="22">
+									<use xlink:href="/svg/icon-cart.svg#icon-cart"></use>
+								</svg>	
+							</span>
 							Add to cart
 						</button>
 					</div>
@@ -51,79 +58,10 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 
-	.btn-list {
-		gap: 16px;
-		height: 30px;
-	}
-
-	.input {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		background: hsl(223, 64%, 98%);
-		border-radius: 8px;
-		padding: 20px;
-	}
-
-
-	.border-none {
-		border: none;
-	}
 	
-	.bg-gray {
-		background: hsl(223, 64%, 98%);
-	}
 
-	.gap-2 {
-		gap: 2rem;
-	}
 
-	.text-center {
-		text-align: center;
-	}
 
-	.btn {
-		width: 100%;
-		background: hsl(26, 100%, 55%);
-		border: none;
-		border-radius: 8px;
-		padding: 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-	}
-
-	.mt-4 {
-		margin-top: 64px !important;
-	}
-
-	.d-flex {
-		display: flex;
-	}
-
-	.flex-row {
-		flex-direction: row;
-	}
-
-	.flex-column {
-		flex-direction: column;
-	}
 	
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		gap: 4rem;
-	}
-	.container {
-		max-width: 1100px;
-		margin: 0 auto;
-	}
-
-	.panel-right {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
 	
 </style>
