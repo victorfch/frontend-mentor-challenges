@@ -1,0 +1,37 @@
+<div class="carousel-images">
+  <div class="main-image">
+    <img src="/product/image-product-1.jpg" alt="image 1">
+  </div>
+  <div class="thumbnail-images">
+    <img src="/product/image-product-1-thumbnail.jpg" alt="thumbnail image 1">
+    <img src="/product/image-product-2-thumbnail.jpg" alt="thumbnail image 2">
+    <img src="/product/image-product-3-thumbnail.jpg" alt="thumbnail image 3">
+    <img src="/product/image-product-4-thumbnail.jpg" alt="thumbnail image 4">
+  </div>
+</div>
+
+<style>
+  .main-image {
+		width: 100%;
+		height: auto;
+	}
+	
+	.main-image img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		border-radius: 10px;
+	}
+
+	.thumbnail-images {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	.thumbnail-images img {
+		width: 100px;
+		border-radius: 10px;
+		height: auto;
+		object-fit: contain;
+	}
+</style>

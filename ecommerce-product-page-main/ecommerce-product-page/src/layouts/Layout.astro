@@ -1,0 +1,55 @@
+--- 
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	*, *::before, *::after {margin: 0; padding: 0; box-sizing: border-box;}
+
+	:root {
+		--size-mobile: 375px;
+		--size-desktop: 1440px;
+
+		--color-primary: hsl(26, 100%, 55%);
+  	--color-secondary: hsl(25, 100%, 94%);
+
+		--color-very-dark-blue: hsl(220, 13%, 13%);
+		--color-dark-gray-blue: hsl(219, 9%, 45%);
+		--color-gray-blue: hsl(220, 14%, 75%);
+		--color-light-gray-blue: hsl(223, 64%, 98%);
+		--color-white: hsl(0, 0%, 100%);
+		--color-black: hsl(0, 0%, 0%);
+	}
+
+
+	html {
+		font-family: 'Kumbh Sans', sans-serif;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--color-black);
+	}
+	
+</style>
