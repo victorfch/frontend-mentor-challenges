@@ -5,6 +5,14 @@ import "slick-carousel/slick/slick-theme.css"
 import { Icon } from "./Icon";
 
 
+const Dots = (dots) => (
+  <div style={{bottom: 'auto'}}>
+    <div className="hidden md:flex thumbnail-images justify-between mt-4">
+      {dots}
+    </div>
+  </div>
+)
+
 export const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -23,13 +31,7 @@ export const Carousel = () => {
         />
       );
     },
-    appendDots: (dots) => (
-      <div style={{bottom: 'auto'}}>
-        <div className="hidden md:flex thumbnail-images justify-between mt-4">
-          {dots}
-        </div>
-      </div>
-    ),
+    appendDots: Dots,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -61,24 +63,18 @@ export const Carousel = () => {
   )
 }
 
-const NextArrow = ({onClick}) => {
+const NextArrow = ({onClick}) => (
+  <div className="block md:hidden absolute top-1/2 right-2 -translate-y-1/2 z-[1]">
+    <button onClick={onClick} className="bg-white rounded-full flex justify-center items-center h-8 w-8">
+      <Icon width="13" height="18" icon="next" />
+    </button>
+  </div>
+)
 
-  return (
-    <div className="block md:hidden absolute top-1/2 right-2 -translate-y-1/2 z-[1]">
-      <button onClick={onClick} className="bg-white rounded-full flex justify-center items-center h-8 w-8">
-        <Icon width="13" height="18" icon="next" />
-      </button>
-    </div>
-  );
-};
-
-const PrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div className="block md:hidden absolute top-1/2 left-2 -translate-y-1/2 z-[1]">
-      <button onClick={onClick} className="bg-white rounded-full flex justify-center items-center h-8 w-8">
-        <Icon width="12" height="18" icon="previous" />
-      </button>
-    </div>
-  )
-}
+const PrevArrow = ({onClick}) => (
+  <div className="block md:hidden absolute top-1/2 left-2 -translate-y-1/2 z-[1]">
+    <button onClick={onClick} className="bg-white rounded-full flex justify-center items-center h-8 w-8">
+      <Icon width="12" height="18" icon="previous" />
+    </button>
+  </div>
+)
