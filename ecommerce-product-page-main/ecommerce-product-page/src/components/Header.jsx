@@ -7,8 +7,8 @@ export const Header = () => {
   const navItems = ["Collections", "Men", "Women", "About", "Contact"]
 
   return (
-    <header className="px-4 min-h-[80px] relative max-w-7xl mx-auto flex items-center justify-start gap-6 border-b border-hsl-gray-blue">
-      <button className="z-[1]" onClick={() => setOpen(!open)}>
+    <header className="px-4 min-h-[80px] relative max-w-7xl mx-auto flex items-center justify-start gap-6 md:border-b md:border-hsl-gray-blue">
+      <button className="z-[2]" onClick={() => setOpen(!open)}>
         <svg data-icon="menu" className="block md:hidden" height="15" width="16">
           <use xlinkHref={open ? '/svg/icon-close.svg#icon-close' : '/svg/icon-menu.svg#icon-menu'}></use>
         </svg>
