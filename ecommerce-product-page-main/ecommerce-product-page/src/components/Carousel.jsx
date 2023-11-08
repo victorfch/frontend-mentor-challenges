@@ -45,12 +45,17 @@ export const Carousel = () => {
     {src: "/product/image-product-4.jpg", alt: "Image 4"}
   ]
 
+  const handleOpenModal = () => {
+    const openModalEvent = new CustomEvent("open-modal")
+    window.dispatchEvent(openModalEvent)
+  }
+
   return (
     <div className="w-full">
       <div className="w-full relative">
         <Slider {...settings}  >
           {images.map((image, id) => (
-            <div key={id}>
+            <div key={id} onClick={handleOpenModal}>
               <img
                 className="w-full h-[30vh] md:h-auto object-cover rounded-none md:rounded-xl hover:cursor-pointer" 
                 {...image}
